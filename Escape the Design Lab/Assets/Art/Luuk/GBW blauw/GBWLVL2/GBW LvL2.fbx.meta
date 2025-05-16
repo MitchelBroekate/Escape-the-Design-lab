@@ -24,6 +24,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Plafondtjes
     second: {fileID: 2100000, guid: 82ff11f64e3745f4daee59ced1ead169, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Raam
+    second: {fileID: 2100000, guid: 0e3da864eb2b1b84699a810840ff8f73, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
