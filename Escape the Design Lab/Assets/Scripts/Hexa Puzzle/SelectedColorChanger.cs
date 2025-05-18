@@ -7,7 +7,8 @@ public class SelectedColorChanger : MonoBehaviour
     string currentCode;
     
     [SerializeField]
-    Image currenHexColorVisual;
+    Image currentHexColorVisual, wrongColor;
+
     
     [SerializeField]
     TMP_Text hexcode;
@@ -29,9 +30,9 @@ public class SelectedColorChanger : MonoBehaviour
 
             hexcode.text = currentCode;
 
-             ColorUtility.TryParseHtmlString("#" + currentCode, out Color correctColorHex);
+            ColorUtility.TryParseHtmlString("#" + currentCode, out Color correctColorHex);
 
-            currenHexColorVisual.color = correctColorHex;
+            currentHexColorVisual.color = correctColorHex;
 
             Destroy(other.gameObject);
         }
@@ -40,6 +41,10 @@ public class SelectedColorChanger : MonoBehaviour
     public void ConfirmColor()
     {
         if(currentCode == null) return;
+
+        //change wrong color
+        ColorUtility.TryParseHtmlString("#" + currentCode, out Color correctColorHex);
+        wrongColor.color = correctColorHex;
 
         if (currentCode == "FA6805")
         {

@@ -55,7 +55,7 @@ public class PosterManager : MonoBehaviour
         //Creates a random wrong color for the main puzzle (Ultimate small chance for the same color)
         wrongColor.color = new Color
         (
-            Random.value,
+            0,
             Random.value,
             Random.value,
             1f

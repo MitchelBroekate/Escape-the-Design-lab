@@ -5263,7 +5263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc615d0b42536b7479aaa044bf6841a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenHexColorVisual: {fileID: 166064363}
+  currentHexColorVisual: {fileID: 166064363}
+  wrongColor: {fileID: 100929652}
   hexcode: {fileID: 1571865598}
   canvasHexcode: {fileID: 826208779}
   canvasAiCode: {fileID: 2098426849}
@@ -5662,7 +5663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1882897002}
-  m_TurnAmount: 15
+  m_TurnAmount: 30
   m_DebounceTime: 0.5
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
