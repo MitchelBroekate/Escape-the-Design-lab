@@ -9,27 +9,35 @@ public class LaptopBehaviour : MonoBehaviour
     [SerializeField]
     TMP_Text laptopHintText;
 
-    int collectedUsb;
+    [SerializeField]
+    List<GameObject> usbInLaptop = new();
+
+    int collectedUsb = 3;
 
     void Start()
     {
-        laptopHintText.text = "Find 3 USB Sticks";
+        laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
     }
 
+    //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.
     void OTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Usb")
         {
             UsbDetection();
+            Destroy(other.gameObject);
         }
     }
 
     void UsbDetection()
     {
-        collectedUsb++;
+        collectedUsb--;
+
+        laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
+        
+        usbInLaptop[collectedUsb].SetActive(true);
     }
 
-    //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.
 
 
     //If laptop has all USB, the Screen should tell the player to edit the clips
