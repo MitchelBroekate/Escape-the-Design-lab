@@ -14,9 +14,9 @@ public class SelectedColorChanger : MonoBehaviour
     TMP_Text hexcode;
 
     [SerializeField]
-    GameObject canvasHexcode;
+    GameObject ParentLogo;
     [SerializeField]
-    GameObject canvasAiCode;
+    GameObject ParentAiCode;
     [SerializeField]
     TMP_Text aiCodeText;
 
@@ -50,13 +50,14 @@ public class SelectedColorChanger : MonoBehaviour
         {
             //feedback right code
 
-            canvasAiCode.SetActive(true);
+            ParentAiCode.SetActive(true);
             aiCodeText.text = GetRandomLetter().ToString();
-            canvasHexcode.SetActive(false);
+            ParentLogo.SetActive(false);
         }
         else
         {
             //feedback wrong code
+            
             Debug.Log("Wrong Code");
         }
     }
