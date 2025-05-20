@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 1859246247082640230}
   - component: {fileID: 7913735675130620341}
   m_Layer: 5
-  m_Name: ConfirmButton
+  m_Name: HexaPlaatsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,7 +20,7 @@ public class LaptopBehaviour : MonoBehaviour
     }
 
     //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.
-    void OTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Usb")
         {
@@ -33,9 +33,20 @@ public class LaptopBehaviour : MonoBehaviour
     {
         collectedUsb--;
 
-        laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
-        
-        usbInLaptop[collectedUsb].SetActive(true);
+        if (collectedUsb <= 0)
+        {
+            usbInLaptop[collectedUsb].SetActive(true);
+
+            laptopHintText.text = "Edit the video clips";
+        }
+        else
+        {
+            laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
+
+            usbInLaptop[collectedUsb].SetActive(true);
+        }
+
+
     }
 
 
