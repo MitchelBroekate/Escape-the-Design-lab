@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ClipSelection : MonoBehaviour
 {
     VideoEditorManager _videoEditorManager;
+
+    [SerializeField]
+    VideoPlayer videoPlayer;
 
     void Start()
     {
@@ -14,6 +16,6 @@ public class ClipSelection : MonoBehaviour
     public void ClipSelected()
     {
         _videoEditorManager.selectedClip = gameObject;
-        transform.GetChild(0).gameObject.SetActive(false);
+        videoPlayer.Play();
     }
 }
