@@ -2906,7 +2906,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1311370757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3431,7 +3431,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1311370757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3856,6 +3856,7 @@ GameObject:
   - component: {fileID: 1383980721}
   - component: {fileID: 1383980720}
   - component: {fileID: 1383980719}
+  - component: {fileID: 1383980722}
   m_Layer: 5
   m_Name: EditSoftwareButton 2
   m_TagString: Untagged
@@ -3927,14 +3928,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464510834}
-        m_TargetAssemblyTypeName: VideoEditorManager, Assembly-CSharp
-        m_MethodName: PlaceSelectedClip
-        m_Mode: 3
+      - m_Target: {fileID: 1383980722}
+        m_TargetAssemblyTypeName: ClipPlacement, Assembly-CSharp
+        m_MethodName: PlaceClip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3977,6 +3978,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383980717}
   m_CullTransparentMesh: 1
+--- !u!114 &1383980722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383980717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00febbec3d9a373459c15b704d239e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _videoEditorManager: {fileID: 1464510834}
+  clipPos: 2
 --- !u!1 &1442239697
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,12 +4105,13 @@ MonoBehaviour:
   - {fileID: 6554779042509875372, guid: d6b2dfeaf9425364989db07ec9cb72a9, type: 3}
   - {fileID: 3279515428394511857, guid: faaa3886acfccb3449f0967b0453d9ec, type: 3}
   - {fileID: 5513416415520687444, guid: 11f1406e9740c454085214b1f71f3d2b, type: 3}
+  placementList: []
   clipSpawnPos:
-  - {fileID: 1029713877}
-  - {fileID: 1816739140}
-  - {fileID: 1284776312}
+  - {fileID: 1029713878}
+  - {fileID: 1816739141}
+  - {fileID: 1284776313}
   selectedClip: {fileID: 0}
-  selectedPlacement: {fileID: 0}
+  clipsPlaced: 0
 --- !u!1 &1490133320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8818444778204139165, guid: d46901c2c9ffff347be18bbe199876bf,
@@ -4704,7 +4720,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1311370757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4964,6 +4980,7 @@ GameObject:
   - component: {fileID: 1874277707}
   - component: {fileID: 1874277706}
   - component: {fileID: 1874277705}
+  - component: {fileID: 1874277708}
   m_Layer: 5
   m_Name: EditSoftwareButton 1
   m_TagString: Untagged
@@ -5035,10 +5052,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464510834}
-        m_TargetAssemblyTypeName: VideoEditorManager, Assembly-CSharp
-        m_MethodName: PlaceSelectedClip
-        m_Mode: 3
+      - m_Target: {fileID: 1874277708}
+        m_TargetAssemblyTypeName: ClipPlacement, Assembly-CSharp
+        m_MethodName: PlaceClip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5085,6 +5102,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874277703}
   m_CullTransparentMesh: 1
+--- !u!114 &1874277708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874277703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00febbec3d9a373459c15b704d239e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _videoEditorManager: {fileID: 1464510834}
+  clipPos: 1
 --- !u!1 &1882335419
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5313,7 @@ GameObject:
   - component: {fileID: 1986980058}
   - component: {fileID: 1986980057}
   - component: {fileID: 1986980056}
+  - component: {fileID: 1986980059}
   m_Layer: 5
   m_Name: EditSoftwareButton 3
   m_TagString: Untagged
@@ -5353,10 +5385,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464510834}
-        m_TargetAssemblyTypeName: VideoEditorManager, Assembly-CSharp
-        m_MethodName: PlaceSelectedClip
-        m_Mode: 3
+      - m_Target: {fileID: 1986980059}
+        m_TargetAssemblyTypeName: ClipPlacement, Assembly-CSharp
+        m_MethodName: PlaceClip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5403,6 +5435,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986980054}
   m_CullTransparentMesh: 1
+--- !u!114 &1986980059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986980054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00febbec3d9a373459c15b704d239e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _videoEditorManager: {fileID: 1464510834}
+  clipPos: 3
 --- !u!1 &1990706235
 GameObject:
   m_ObjectHideFlags: 0

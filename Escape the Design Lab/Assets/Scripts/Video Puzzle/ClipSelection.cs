@@ -4,9 +4,11 @@ using UnityEngine.Video;
 public class ClipSelection : MonoBehaviour
 {
     VideoEditorManager _videoEditorManager;
+    [SerializeField] int _clipValue;
+    [SerializeField] VideoPlayer videoPlayer;
+    int _clipPos;
 
-    [SerializeField]
-    VideoPlayer videoPlayer;
+
 
     void Start()
     {
@@ -17,5 +19,17 @@ public class ClipSelection : MonoBehaviour
     {
         _videoEditorManager.selectedClip = gameObject;
         videoPlayer.Play();
+    }
+
+    public int ClipPos
+    {
+        get { return _clipPos; }
+        set { _clipPos = value; }
+    }
+     
+    public int ClipValue
+    {
+        get { return _clipValue; }
+        set { _clipValue = value; }
     }
 }
