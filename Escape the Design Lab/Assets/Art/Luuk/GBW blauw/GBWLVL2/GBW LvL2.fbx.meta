@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Lift
+    second: {fileID: 2100000, guid: 7475fc9db51bde24daa7c3326897c0f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Muurtjes
     second: {fileID: 2100000, guid: 8d899ffb10bab7e4a80bc828724084d5, type: 2}
   - first:
@@ -24,11 +29,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Plafondtjes
     second: {fileID: 2100000, guid: 82ff11f64e3745f4daee59ced1ead169, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Raam
-    second: {fileID: 2100000, guid: 0e3da864eb2b1b84699a810840ff8f73, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
