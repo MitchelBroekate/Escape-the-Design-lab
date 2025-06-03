@@ -16,6 +16,8 @@ public class ClipPlacement : MonoBehaviour
             _videoEditorManager.clipsPlaced++;
 
             _videoEditorManager.CheckClipsPlaced();
+
+            _videoEditorManager.selectedClip = null;
             
             gameObject.SetActive(false);
         }

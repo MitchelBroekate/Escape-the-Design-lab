@@ -8,8 +8,6 @@ public class ClipSelection : MonoBehaviour
     [SerializeField] VideoPlayer videoPlayer;
     int _clipPos;
 
-
-
     void Start()
     {
         _videoEditorManager = GameObject.Find("Managers").transform.GetChild(2).GetComponent<VideoEditorManager>();

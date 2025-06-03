@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,11 +6,11 @@ using UnityEngine.UI;
 public class SelectedColorChanger : MonoBehaviour
 {
     string currentCode;
-    
+
     [SerializeField]
     Image currentHexColorVisual, wrongColor;
 
-    
+
     [SerializeField]
     TMP_Text hexcode;
 
@@ -40,7 +41,7 @@ public class SelectedColorChanger : MonoBehaviour
 
     public void ConfirmColor()
     {
-        if(currentCode == null) return;
+        if (currentCode == null) return;
 
         //change wrong color
         ColorUtility.TryParseHtmlString("#" + currentCode, out Color correctColorHex);
@@ -50,14 +51,12 @@ public class SelectedColorChanger : MonoBehaviour
         {
             //feedback right code
 
-            ParentAiCode.SetActive(true);
-            aiCodeText.text = GetRandomLetter().ToString();
-            ParentLogo.SetActive(false);
+            StartCoroutine(CorrectColorWin());
         }
         else
         {
             //feedback wrong code
-            
+
             Debug.Log("Wrong Code");
         }
     }
@@ -66,5 +65,14 @@ public class SelectedColorChanger : MonoBehaviour
     {
         // Random uppercase letter from A (65) to Z (90)
         return (char)Random.Range(65, 91);
+    }
+
+    IEnumerator CorrectColorWin()
+    {
+        yield return new WaitForSeconds(1);    
+                    
+        ParentAiCode.SetActive(true);
+        aiCodeText.text = GetRandomLetter().ToString();
+        ParentLogo.SetActive(false);
     }
 }
