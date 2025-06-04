@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class VideoEditorManager : MonoBehaviour
     [SerializeField] List<GameObject> placementList = new();
     [SerializeField] List<Transform> clipSpawnPos = new();
     List<Transform> clipSpawnChecks = new();
+    List<GameObject> clipFinishedList = new();
+
+    [SerializeField]
+    Transform clipFinishedParent;
 
     public GameObject selectedClip;
     public int clipsPlaced = 0;
@@ -43,6 +48,11 @@ public class VideoEditorManager : MonoBehaviour
             {
                 ClipSelection currentClipValues = clipParent.GetChild(0).gameObject.GetComponent<ClipSelection>();
 
+                //play video in order that was chosen
+
+                PlayClipsInOrder();
+
+
                 //if wrong reset vars
                 if (currentClipValues.ClipPos != currentClipValues.ClipValue)
                 {
@@ -58,6 +68,8 @@ public class VideoEditorManager : MonoBehaviour
                         placementButton.gameObject.SetActive(true);
                     }
 
+                    SetClipSpawnPlacements();
+
                     //Lose fx
                 }
                 else
@@ -66,6 +78,28 @@ public class VideoEditorManager : MonoBehaviour
                     //win fx
                 }
             }
+        }
+    }
+
+    void PlayClipsInOrder()
+    {
+        foreach (Transform parent in clipSpawnPos)
+        {
+            ClipSelection currentClipSelection = parent.GetChild(0).gameObject.GetComponent<ClipSelection>();
+
+            clipFinishedList.Insert(currentClipSelection.ClipValue, parent.GetChild(0).gameObject);
+        }
+
+        StartCoroutine(clipFinishedPlay());
+    }
+
+    IEnumerator clipFinishedPlay()
+    {
+        foreach (GameObject clips in clipFinishedList)
+        {
+            
+
+            yield return new WaitForSeconds(1);    
         }
     }
 }
