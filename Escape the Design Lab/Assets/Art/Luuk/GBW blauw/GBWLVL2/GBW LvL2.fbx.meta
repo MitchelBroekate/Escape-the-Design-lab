@@ -3,32 +3,7 @@ guid: d5b174b6c19bf3443ab5cb438234bb7a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BlauweGrond
-    second: {fileID: 2100000, guid: f74ddce02fb45a344898a3700a7fe42b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Deurranden
-    second: {fileID: 2100000, guid: 1540aeba98e74bf43afe417a47fbaeab, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lift
-    second: {fileID: 2100000, guid: 7475fc9db51bde24daa7c3326897c0f7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Muurtjes
-    second: {fileID: 2100000, guid: 8d899ffb10bab7e4a80bc828724084d5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plafondtjes
-    second: {fileID: 2100000, guid: 82ff11f64e3745f4daee59ced1ead169, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
