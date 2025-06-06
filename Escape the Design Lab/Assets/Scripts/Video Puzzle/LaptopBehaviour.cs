@@ -49,7 +49,5 @@ public class LaptopBehaviour : MonoBehaviour
 
     }
 
-
-
     //If laptop has all USB, the Screen should tell the player to edit the clips
 }

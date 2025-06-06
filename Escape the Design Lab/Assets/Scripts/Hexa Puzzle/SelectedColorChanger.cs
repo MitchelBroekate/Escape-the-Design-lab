@@ -69,10 +69,15 @@ public class SelectedColorChanger : MonoBehaviour
 
     IEnumerator CorrectColorWin()
     {
-        yield return new WaitForSeconds(1);    
-                    
+        yield return new WaitForSeconds(1);
+
         ParentAiCode.SetActive(true);
         aiCodeText.text = GetRandomLetter().ToString();
         ParentLogo.SetActive(false);
+    }
+
+    public TMP_Text AICodeText
+    {
+        get {return aiCodeText;}
     }
 }

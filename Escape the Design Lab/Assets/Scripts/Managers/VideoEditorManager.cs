@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class VideoEditorManager : MonoBehaviour
 {
@@ -11,10 +13,12 @@ public class VideoEditorManager : MonoBehaviour
     List<GameObject> clipFinishedList = new();
 
     [SerializeField]
-    Transform clipFinishedParent;
+    Transform clipFinishedPosition;
 
     public GameObject selectedClip;
     public int clipsPlaced = 0;
+
+    TMP_Text aiCodeText;
 
     //Clips get put in a random order.
     void Start()
@@ -43,41 +47,9 @@ public class VideoEditorManager : MonoBehaviour
     {
         if (clipsPlaced == 3)
         {
-            //check if clips are in the right place
-            foreach (Transform clipParent in clipSpawnPos)
-            {
-                ClipSelection currentClipValues = clipParent.GetChild(0).gameObject.GetComponent<ClipSelection>();
-
-                //play video in order that was chosen
-
-                PlayClipsInOrder();
-
-
-                //if wrong reset vars
-                if (currentClipValues.ClipPos != currentClipValues.ClipValue)
-                {
-                    clipsPlaced = 0;
-
-                    foreach (Transform parentObject in clipSpawnPos)
-                    {
-                        Destroy(parentObject.GetChild(0).gameObject);
-                    }
-
-                    foreach (GameObject placementButton in placementList)
-                    {
-                        placementButton.gameObject.SetActive(true);
-                    }
-
-                    SetClipSpawnPlacements();
-
-                    //Lose fx
-                }
-                else
-                {
-                    //wincondition
-                    //win fx
-                }
-            }
+            //play video in order that was chosen
+            clipFinishedPosition.GetChild(0).gameObject.SetActive(false);
+            PlayClipsInOrder();
         }
     }
 
@@ -93,13 +65,62 @@ public class VideoEditorManager : MonoBehaviour
         StartCoroutine(clipFinishedPlay());
     }
 
+    char GetRandomLetter()
+    {
+        // Random uppercase letter from A (65) to Z (90)
+        return (char)Random.Range(65, 91);
+    }
+
     IEnumerator clipFinishedPlay()
     {
         foreach (GameObject clips in clipFinishedList)
         {
-            
+            clips.transform.position = clipFinishedPosition.position;
 
-            yield return new WaitForSeconds(1);    
+            clips.GetComponent<VideoPlayer>().Play();
+
+            yield return new WaitForSeconds(1);
+
+            clips.SetActive(false);
         }
+
+        //check if clips are in the right place
+        foreach (Transform clipParent in clipSpawnPos)
+        {
+            ClipSelection currentClipValues = clipParent.GetChild(0).gameObject.GetComponent<ClipSelection>();
+
+            //if wrong reset vars
+            if (currentClipValues.ClipPos != currentClipValues.ClipValue)
+            {
+                clipsPlaced = 0;
+
+                foreach (Transform parentObject in clipSpawnPos)
+                {
+                    Destroy(parentObject.GetChild(0).gameObject);
+                }
+
+                foreach (GameObject placementButton in placementList)
+                {
+                    placementButton.gameObject.SetActive(true);
+                }
+
+                SetClipSpawnPlacements();
+
+                //Lose fx
+            }
+            else
+            {
+                //wincondition
+                aiCodeText.text = GetRandomLetter().ToString();
+                clipFinishedPosition.GetChild(1).gameObject.GetComponent<TMP_Text>().text = aiCodeText.text;
+
+                //win fx
+            }
+        }
+    }
+    
+    public TMP_Text AICodeText
+    {
+        get {return aiCodeText;}
     }
 }
