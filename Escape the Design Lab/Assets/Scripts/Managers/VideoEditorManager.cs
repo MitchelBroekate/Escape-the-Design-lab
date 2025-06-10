@@ -38,6 +38,7 @@ public class VideoEditorManager : MonoBehaviour
             int randomSpawnPos = Random.Range(0, clipSpawnChecks.Count);
 
             GameObject currentClip = Instantiate(clip, clipSpawnChecks[randomSpawnPos], false);
+            currentClip.transform.localScale = new Vector3(2,2,2);
 
             clipSpawnChecks.RemoveAt(randomSpawnPos);
         }
