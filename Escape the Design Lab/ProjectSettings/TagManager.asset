@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CodePiece
   - Usb
+  - AiPiece
   layers:
   - Default
   - TransparentFX

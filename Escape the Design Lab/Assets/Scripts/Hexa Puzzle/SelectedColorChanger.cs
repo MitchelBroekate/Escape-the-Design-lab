@@ -16,10 +16,11 @@ public class SelectedColorChanger : MonoBehaviour
 
     [SerializeField]
     GameObject ParentLogo;
+
     [SerializeField]
-    GameObject ParentAiCode;
+    GameObject codePiece;
     [SerializeField]
-    TMP_Text aiCodeText;
+    Transform codeSpawn;
 
     void OnTriggerEnter(Collider other)
     {
@@ -61,23 +62,11 @@ public class SelectedColorChanger : MonoBehaviour
         }
     }
 
-    char GetRandomLetter()
-    {
-        // Random uppercase letter from A (65) to Z (90)
-        return (char)Random.Range(65, 91);
-    }
-
     IEnumerator CorrectColorWin()
     {
-        yield return new WaitForSeconds(1);
-
-        ParentAiCode.SetActive(true);
-        aiCodeText.text = GetRandomLetter().ToString();
+        yield return new WaitForSeconds(3);
         ParentLogo.SetActive(false);
-    }
 
-    public TMP_Text AICodeText
-    {
-        get {return aiCodeText;}
+        Instantiate(codePiece, codeSpawn);
     }
 }

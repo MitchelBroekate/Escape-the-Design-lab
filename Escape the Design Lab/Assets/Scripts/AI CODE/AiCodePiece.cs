@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class AiCodePiece : MonoBehaviour
 {
-    [SerializeField]
-    TMP_Text codeText;
+    public TMP_Text codeText;
+    
     void Start()
     {
         codeText.text = GetRandomLetter().ToString();

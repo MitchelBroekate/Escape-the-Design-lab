@@ -116,7 +116,6 @@ public class VideoEditorManager : MonoBehaviour
             {
                 //Spawn code piece
                 Instantiate(codePiece, codeSpawn);
-
                 //win fx
             }
         }
