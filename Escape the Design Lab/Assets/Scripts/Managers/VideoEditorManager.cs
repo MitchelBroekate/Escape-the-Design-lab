@@ -15,10 +15,13 @@ public class VideoEditorManager : MonoBehaviour
     [SerializeField]
     Transform clipFinishedPosition;
 
+    [SerializeField]
+    GameObject codePiece;
+    [SerializeField]
+    Transform codeSpawn;
+
     public GameObject selectedClip;
     public int clipsPlaced = 0;
-
-    TMP_Text aiCodeText;
 
     //Clips get put in a random order.
     void Start()
@@ -111,17 +114,11 @@ public class VideoEditorManager : MonoBehaviour
             }
             else
             {
-                //wincondition
-                aiCodeText.text = GetRandomLetter().ToString();
-                clipFinishedPosition.GetChild(1).gameObject.GetComponent<TMP_Text>().text = aiCodeText.text;
+                //Spawn code piece
+                Instantiate(codePiece, codeSpawn);
 
                 //win fx
             }
         }
-    }
-    
-    public TMP_Text AICodeText
-    {
-        get {return aiCodeText;}
     }
 }

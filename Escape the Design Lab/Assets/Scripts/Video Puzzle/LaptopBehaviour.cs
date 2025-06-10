@@ -19,7 +19,7 @@ public class LaptopBehaviour : MonoBehaviour
 
     void Start()
     {
-        laptopHintText.text = "Find " + usbToCollect + " USB Sticks";
+        laptopHintText.text = "Vindt " + usbToCollect + " USB Sticks";
     }
 
     //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.
@@ -41,7 +41,7 @@ public class LaptopBehaviour : MonoBehaviour
         {
             usbInLaptop[usbToCollect].SetActive(true);
 
-            laptopHintText.text = "Edit the video clips";
+            laptopHintText.text = "Edit de video clips";
 
             //set clips true
 
@@ -50,7 +50,7 @@ public class LaptopBehaviour : MonoBehaviour
         }
         else
         {
-            laptopHintText.text = "Find " + usbToCollect + " USB Sticks";
+            laptopHintText.text = "Vindt " + usbToCollect + " USB Sticks";
 
             usbInLaptop[usbToCollect].SetActive(true);
         }
