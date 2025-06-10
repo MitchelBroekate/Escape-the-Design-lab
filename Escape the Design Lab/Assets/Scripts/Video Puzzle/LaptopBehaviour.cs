@@ -12,11 +12,14 @@ public class LaptopBehaviour : MonoBehaviour
     [SerializeField]
     List<GameObject> usbInLaptop = new();
 
-    int collectedUsb = 3;
+    int collectedUsb = 0;
+    int usbToCollect = 3;
+
+    [SerializeField] GameObject screenClips, screenText;
 
     void Start()
     {
-        laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
+        laptopHintText.text = "Find " + usbToCollect + " USB Sticks";
     }
 
     //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.
@@ -31,19 +34,25 @@ public class LaptopBehaviour : MonoBehaviour
 
     void UsbDetection()
     {
-        collectedUsb--;
+        collectedUsb++;
+        usbToCollect--;
 
-        if (collectedUsb <= 0)
+        if (collectedUsb >= 3)
         {
-            usbInLaptop[collectedUsb].SetActive(true);
+            usbInLaptop[usbToCollect].SetActive(true);
 
             laptopHintText.text = "Edit the video clips";
+
+            //set clips true
+
+            screenClips.SetActive(true);
+            screenText.SetActive(true);
         }
         else
         {
-            laptopHintText.text = "Find " + collectedUsb + " USB Sticks";
+            laptopHintText.text = "Find " + usbToCollect + " USB Sticks";
 
-            usbInLaptop[collectedUsb].SetActive(true);
+            usbInLaptop[usbToCollect].SetActive(true);
         }
 
 
