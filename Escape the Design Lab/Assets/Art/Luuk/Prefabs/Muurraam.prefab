@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8290594568129054124, guid: e3c3e108ab3fd16498a1b27218869b86,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e3c3e108ab3fd16498a1b27218869b86,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -72,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Muurraam
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3c3e108ab3fd16498a1b27218869b86,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
