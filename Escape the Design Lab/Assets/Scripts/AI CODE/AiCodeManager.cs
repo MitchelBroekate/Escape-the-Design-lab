@@ -8,7 +8,12 @@ public class AiCodeManager : MonoBehaviour
     [SerializeField]
     TMP_Text aiText1, aiText2;
 
+    [SerializeField]
+    Timer timer;
+
     AiCodePiece currentAICode;
+
+
 
     int completedCodePiece;
     void OnTriggerEnter(Collider other)
@@ -40,8 +45,12 @@ public class AiCodeManager : MonoBehaviour
 
     IEnumerator AICompletion()
     {
+        timer.gameWon = true;
+
         yield return new WaitForSeconds(3);
 
         //AI shutdown/Open doors
+
+        
     }
 }

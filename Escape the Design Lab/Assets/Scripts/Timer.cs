@@ -6,6 +6,8 @@ public class Timer : MonoBehaviour
     [SerializeField] float timerDuration = 60.0f; // Duration in seconds, adjustable in Inspector
     [SerializeField] TMP_Text timerText; // Reference to the TMP text object, assign in Inspector
 
+    public bool gameWon;
+
     float timeRemaining;
     bool hasTriggered = false;
 
@@ -16,18 +18,22 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (timeRemaining > 0)
+        if (!gameWon)
         {
-            timeRemaining -= Time.deltaTime;
-            UpdateTimerDisplay(timeRemaining);
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                UpdateTimerDisplay(timeRemaining);
+            }
+            else if (!hasTriggered)
+            {
+                timeRemaining = 0;
+                hasTriggered = true;
+                UpdateTimerDisplay(0);
+                GameOver();
+            }
         }
-        else if (!hasTriggered)
-        {
-            timeRemaining = 0;
-            hasTriggered = true;
-            UpdateTimerDisplay(0);
-            GameOver();
-        }
+
     }
 
     void UpdateTimerDisplay(float time)
