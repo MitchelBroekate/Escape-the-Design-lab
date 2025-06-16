@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class ButtonFunctions : MonoBehaviour
 {
     [Header("Screens")]
     public GameObject[] menuScreens;
+
+    [Header("Buttons")]
+    public Button[] buttons;
+
     [Header("Audio")]
     public AudioSource menuAudioSource;
-    public AudioClip hoverAudio;
     public AudioClip clickAudio;
-    public void EnterAudio()
-    {
-        menuAudioSource.clip = hoverAudio;
-        menuAudioSource.Play();
-    }
+
+    [Header("Animation")]
+    public PlayableDirector nexusAnim;
+
     public void SettingsScreenActive()
     {
         menuScreens[0].SetActive(true);
@@ -30,5 +34,28 @@ public class ButtonFunctions : MonoBehaviour
 
         menuAudioSource.clip = clickAudio;
         menuAudioSource.Play();
+    }
+    public void PlayGame()
+    {
+        menuAudioSource.clip = clickAudio;
+        menuAudioSource.Play();
+
+        foreach(Button button in buttons)
+        {
+            button.interactable = false;
+        }
+
+        menuScreens[0].SetActive(false);
+        menuScreens[1].SetActive(false);
+        menuScreens[2].SetActive(true);
+
+        nexusAnim.Play();
+
+        StartCoroutine(StartGameAfterAnim((float)nexusAnim.duration));
+    }
+    public IEnumerator StartGameAfterAnim(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Started The Game");
     }
 }
