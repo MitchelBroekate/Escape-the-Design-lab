@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TMP_Text timerText; // Reference to the TMP text object, assign in Inspector
 
     public bool gameWon;
+    public bool startTimer = false;
 
     float timeRemaining;
     bool hasTriggered = false;
@@ -18,7 +20,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!gameWon)
+        if (!gameWon && startTimer)
         {
             if (timeRemaining > 0)
             {
@@ -30,7 +32,7 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 hasTriggered = true;
                 UpdateTimerDisplay(0);
-                GameOver();
+                StartCoroutine(GameOver());
             }
         }
 
@@ -53,8 +55,10 @@ public class Timer : MonoBehaviour
         }
     }
 
-    void GameOver()
+    IEnumerator GameOver()
     {
-        //Time ran out
+        //game lost stuff
+        yield return new WaitForSeconds(9);
+        
     }
 }

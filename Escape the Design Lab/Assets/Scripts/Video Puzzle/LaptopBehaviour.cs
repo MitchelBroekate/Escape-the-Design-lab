@@ -19,7 +19,7 @@ public class LaptopBehaviour : MonoBehaviour
 
     void Start()
     {
-        laptopHintText.text = "Vindt " + usbToCollect + " USB Sticks";
+        laptopHintText.text = "Vind " + usbToCollect + " USB Sticks";
     }
 
     //Laptop needs to detect a held USB, despawn held USB, and show USB in laptop +1.

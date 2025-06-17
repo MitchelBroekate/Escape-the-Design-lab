@@ -19,6 +19,9 @@ public class ButtonFunctions : MonoBehaviour
     [Header("Animation")]
     public PlayableDirector nexusAnim;
 
+    [Header("Timer")]
+    public Timer timer;
+
     public void SettingsScreenActive()
     {
         menuScreens[0].SetActive(true);
@@ -57,5 +60,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Debug.Log("Started The Game");
+
+        timer.startTimer = true;
+
+        //play door animation
     }
 }
