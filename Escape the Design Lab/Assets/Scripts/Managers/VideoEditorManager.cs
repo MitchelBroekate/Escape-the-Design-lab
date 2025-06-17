@@ -69,12 +69,6 @@ public class VideoEditorManager : MonoBehaviour
         StartCoroutine(clipFinishedPlay());
     }
 
-    // char GetRandomLetter()
-    // {
-    //     // Random uppercase letter from A (65) to Z (90)
-    //     return (char)Random.Range(65, 91);
-    // }
-
     IEnumerator clipFinishedPlay()
     {
         foreach (GameObject clips in clipFinishedList)
