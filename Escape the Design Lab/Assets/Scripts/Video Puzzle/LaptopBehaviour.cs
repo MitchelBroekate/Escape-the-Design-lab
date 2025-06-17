@@ -50,7 +50,7 @@ public class LaptopBehaviour : MonoBehaviour
         }
         else
         {
-            laptopHintText.text = "Vindt " + usbToCollect + " USB Sticks";
+            laptopHintText.text = "Vind " + usbToCollect + " USB Sticks";
 
             usbInLaptop[usbToCollect].SetActive(true);
         }
