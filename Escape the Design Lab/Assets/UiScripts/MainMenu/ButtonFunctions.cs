@@ -18,6 +18,7 @@ public class ButtonFunctions : MonoBehaviour
 
     [Header("Animation")]
     public PlayableDirector nexusAnim;
+    public Animator doorAnim;
 
     [Header("Timer")]
     public Timer timer;
@@ -59,7 +60,13 @@ public class ButtonFunctions : MonoBehaviour
     public IEnumerator StartGameAfterAnim(float time)
     {
         yield return new WaitForSeconds(time);
-        Debug.Log("Started The Game");
+        foreach (Button button in buttons)
+        {
+            button.interactable = true;
+        }
+        buttons[0].interactable = false;
+
+        doorAnim.SetInteger("door", 1);
 
         timer.startTimer = true;
 

@@ -3764,6 +3764,66 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7478918335496753557, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.030347727
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478918335496753557, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478918335496753557, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9995394
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478918335496753557, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478918335496753557, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 183.478
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.8769
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998372
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.01804286
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244081021133547615, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.068
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3771,7 +3831,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 156651468}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6054034322398938961, guid: ac96f55f05fbc2442b0969cc32529c4a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2045465357}
   m_SourcePrefab: {fileID: 100100000, guid: ac96f55f05fbc2442b0969cc32529c4a, type: 3}
 --- !u!4 &2045465355 stripped
 Transform:
@@ -3779,6 +3843,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2045465354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2045465356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6054034322398938961, guid: ac96f55f05fbc2442b0969cc32529c4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2045465354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2045465357
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045465356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce311deffba6a5547b22b1cabaad5b57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2102870064
 GameObject:
   m_ObjectHideFlags: 0
