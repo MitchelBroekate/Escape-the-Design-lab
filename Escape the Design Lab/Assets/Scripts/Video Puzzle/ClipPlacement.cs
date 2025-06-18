@@ -5,6 +5,9 @@ public class ClipPlacement : MonoBehaviour
     [SerializeField] VideoEditorManager _videoEditorManager;
     [SerializeField] int clipPos;
 
+    [Header("Audio")]
+    public AudioSource clipPlaceSource;
+
     public void PlaceClip()
     {
         if (_videoEditorManager.selectedClip != null)
@@ -20,6 +23,8 @@ public class ClipPlacement : MonoBehaviour
             _videoEditorManager.selectedClip = null;
             
             gameObject.SetActive(false);
+
+            clipPlaceSource.Play();
         }
     }
 }

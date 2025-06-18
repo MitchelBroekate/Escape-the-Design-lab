@@ -15,12 +15,18 @@ public class CodeBehaviour : MonoBehaviour
     TMP_Text hexacodeText;
     string hexacode;
 
+    [Header("Audio")]
+    AudioSource hexaBordSource;
+    public AudioClip[] hexaBordSounds;
+
     void Start()
     {
         xRGrabInteractable = GetComponent<XRGrabInteractable>();
         objectCollider = GetComponent<BoxCollider>();
 
         layerToRemove = LayerMask.NameToLayer("Walls");
+
+        hexaBordSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -58,5 +64,16 @@ public class CodeBehaviour : MonoBehaviour
     {
         get { return hexacode; }
         set { hexacode = value; }
+    }
+
+    public void GrabSound()
+    {
+        hexaBordSource.clip = hexaBordSounds[0];
+        hexaBordSource.Play();
+    }
+    public void DropSound()
+    {
+        hexaBordSource.clip = hexaBordSounds[1];
+        hexaBordSource.Play();
     }
 }
