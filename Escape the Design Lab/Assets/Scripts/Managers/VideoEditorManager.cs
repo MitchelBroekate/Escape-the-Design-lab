@@ -22,16 +22,10 @@ public class VideoEditorManager : MonoBehaviour
     public GameObject selectedClip;
     public int clipsPlaced = 0;
 
-    [Header("Audio")]
-    AudioSource videoEditSource;
-    public AudioClip[] videoEditSounds;
-
     //Clips get put in a random order.
     void Start()
     {
         SetClipSpawnPlacements();
-
-        videoEditSource = GetComponent<AudioSource>();
     }
 
     void SetClipSpawnPlacements()
@@ -109,16 +103,13 @@ public class VideoEditorManager : MonoBehaviour
 
                 SetClipSpawnPlacements();
 
-                videoEditSource.clip = videoEditSounds[1];
-                videoEditSource.Play();
+                //Lose fx
             }
             else
             {
                 //Spawn code piece
                 Instantiate(codePiece, codeSpawn);
-
-                videoEditSource.clip = videoEditSounds[0];
-                videoEditSource.Play();
+                //win fx
             }
         }
     }

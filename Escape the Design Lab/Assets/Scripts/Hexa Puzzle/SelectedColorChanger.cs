@@ -22,14 +22,6 @@ public class SelectedColorChanger : MonoBehaviour
     [SerializeField]
     Transform codeSpawn;
 
-    [Header("Audio")]
-    AudioSource hexaConfirmSource;
-    public AudioClip[] hexaConfirmSounds;
-
-    private void Start()
-    {
-        hexaConfirmSource = GetComponent<AudioSource>();
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "CodePiece")
@@ -61,18 +53,12 @@ public class SelectedColorChanger : MonoBehaviour
             //feedback right code
 
             StartCoroutine(CorrectColorWin());
-
-            hexaConfirmSource.clip = hexaConfirmSounds[0];
-            hexaConfirmSource.Play();
         }
         else
         {
             //feedback wrong code
 
             Debug.Log("Wrong Code");
-
-            hexaConfirmSource.clip = hexaConfirmSounds[1];
-            hexaConfirmSource.Play();
         }
     }
 
